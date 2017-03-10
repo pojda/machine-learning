@@ -12059,6 +12059,7 @@ If we increase the number of rooms (RM), then the price should increase as well,
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer:</strong>
 Model has a coefficient of determination, R^2, of 0.923.</p>
+<p>The r2 is over 0.9, which is really close to 1 so I believe the model has captured the variation of the target variable well.</p>
 
 </div>
 </div>
@@ -14541,7 +14542,7 @@ IiIiooMlrEVERER0sP8BTkuBcXna/W8AAAAASUVORK5CYII=
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong>
 On a maximum depth of 1 the model suffers from high bias. When it's trained with a depth of 10 it suffers from a high variance.
-I got that from the curves that are too close on the beggining of the graph and then they split and their difference start to get bigger as we increase the depth.</p>
+As I learned more on this link <a href="http://scott.fortmann-roe.com/docs/BiasVariance.html">http://scott.fortmann-roe.com/docs/BiasVariance.html</a>, when we have depths from 1 to 3 in this graph, the lines are too close which mean a high bias, on 4 it looks like the sweet spot because after that the lines separate too much which means a high variance.</p>
 
 </div>
 </div>
@@ -14594,7 +14595,8 @@ I believe it's the model with a maximum depth of 4, because it's when the valida
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong>
-It's when we test our whole dataset with a few parameters that we give it to. We specify those parameters manually and the functions test all possible combinations using them, and then gives us the best scoring results.</p>
+It's when we exhaustively test our whole dataset on every possible combination with a few parameters that we give it to. We specify those parameters manually and the functions test all possible combinations using them, and then gives us the best scoring results.</p>
+<p>As it tests <em>everything</em>, it's a very expensive algorithm and should be used wisely.</p>
 
 </div>
 </div>
@@ -14616,7 +14618,8 @@ It's when we test our whole dataset with a few parameters that we give it to. We
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong>
-The k-fold cross validation trains our models against our whole data each part (fold) a time. This makes easiser as we don't have to specify the parameters ourselves.</p>
+The k-fold cross validation trains our models against our whole data each part (fold) a time.</p>
+<p>Works like this: we divide our dataset into K folds, and use that part as a testing data and the rest as our training data. Then, we take the K+1 part, and test everything again. In the end, we get the overall performance by doing an average of every set individual performance score.</p>
 
 </div>
 </div>
